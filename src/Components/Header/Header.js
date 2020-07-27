@@ -44,15 +44,7 @@ const Header = () => {
       <Typography className={classes.title} variant="h4">
         <Typed
           strings={["Vivek Kumar Ghosh"]}
-          backspeed={60}
-          typeSpeed={70}
-          loop
-        />
-      </Typography>
-      <Typography className={classes.subTitle} variant="h5">
-        <Typed
-          strings={["Uttaranchal University"]}
-          backspeed={50}
+          backspeed={30}
           typeSpeed={70}
           loop
         />
@@ -60,15 +52,41 @@ const Header = () => {
 
       <Typography className={classes.subTitle} variant="h5">
         <Typed
+          strings={["Bachelor of Technology, Computer Science"]}
+          backspeed={30}
+          typeSpeed={90}
+          loop
+        />
+      </Typography>
+
+      <Typography className={classes.subTitle} variant="h5">
+        <Typed
+          strings={["Uttaranchal University", "Dehradun", "Uttarakhand, India"]}
+          backspeed={30}
+          typeSpeed={90}
+          loop
+        />
+      </Typography>
+
+      <Typography className={classes.subTitle} variant="h5">
+        <Typed
           strings={[
+            "C/C++",
+            "Data Science",
             "Machine Learning",
             "Deep Learning",
-            "Data Structures",
-            "DBMS",
+            "Data Structures and Algorithms",
+            "Database Management System",
+            "JavaScript",
             "ReactJS",
+            "Django",
+            "Flask",
+            "Operating System",
+            "Python",
+            "Competitive Programming",
           ]}
-          backspeed={50}
-          typeSpeed={70}
+          backspeed={30}
+          typeSpeed={90}
           loop
         />
       </Typography>
