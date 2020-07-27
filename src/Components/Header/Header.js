@@ -41,7 +41,7 @@ const Header = () => {
         />
       </Grid>
 
-      <Typography classes={classes.title} variant="h4">
+      <Typography className={classes.title} variant="h4">
         <Typed
           strings={["Vivek Kumar Ghosh"]}
           backspeed={60}
@@ -49,7 +49,7 @@ const Header = () => {
           loop
         />
       </Typography>
-      <Typography classes={classes.subTitle} variant="h5">
+      <Typography className={classes.subTitle} variant="h5">
         <Typed
           strings={["Uttaranchal University"]}
           backspeed={50}
@@ -58,7 +58,7 @@ const Header = () => {
         />
       </Typography>
 
-      <Typography classes={classes.subTitle} variant="h5">
+      <Typography className={classes.subTitle} variant="h5">
         <Typed
           strings={[
             "Machine Learning",
