@@ -27,7 +27,7 @@ import {
   LinkedIn,
   ContactMail,
 } from "@material-ui/icons";
-import avatar from "../../Static/avatar.png";
+import avatar from "../../static/avatar.png";
 import { makeStyles } from "@material-ui/core/styles";
 
 // CSS STYLE for UI
