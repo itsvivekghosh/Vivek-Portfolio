@@ -8,6 +8,7 @@ const useStyles = makeStyles({
   particlesCanva: {
     position: "absolute",
     width: "100%",
+    opacity: "0.5",
   },
 });
 

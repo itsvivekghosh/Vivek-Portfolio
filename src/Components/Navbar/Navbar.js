@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import React from "react";
 import MobileLeftMenuSlider from "@material-ui/core/Drawer/Drawer";
 import {
@@ -54,18 +55,22 @@ const menuItems = [
   {
     listIcon: <Home />,
     listText: "Home",
+    listPath: "/",
   },
   {
     listIcon: <AssignmentInd />,
     listText: "Resume",
+    listPath: "/resume",
   },
   {
     listIcon: <Apps />,
     listText: "Portfolio",
+    listPath: "/portfolio",
   },
   {
     listIcon: <ContactMail />,
     listText: "Contacts",
+    listPath: "/contact",
   },
 ];
 
@@ -94,7 +99,7 @@ const Navbar = () => {
       <List>
         {menuItems.map((item, key) => {
           return (
-            <ListItem button key={key}>
+            <ListItem button key={key} component={Link} to={item.listPath}>
               <ListItemIcon className={classes.listItem}>
                 {item.listIcon}
               </ListItemIcon>
