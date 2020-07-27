@@ -1,11 +1,14 @@
 import React from "react";
+import Header from "../Header/Header";
+import Navbar from "../Navbar/Navbar";
 
-const index = () => {
+export function Index() {
   return (
     <div>
-      <h1>Index</h1>
+      <Navbar />
+      <Header />
     </div>
   );
-};
+}
 
-export default index;
+export default Index;
