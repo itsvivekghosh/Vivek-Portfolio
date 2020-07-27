@@ -49,6 +49,9 @@ const useStyles = makeStyles((theme) => ({
   listText: {
     color: "tan",
   },
+  topHeading: {
+    position: "relative",
+  },
 }));
 
 const menuItems = [
@@ -122,7 +125,9 @@ const Navbar = () => {
             <IconButton onClick={toggleSlider("left", true)}>
               <Apps style={{ color: "tomato" }} />
             </IconButton>
-            <Typography variant="h5">Vivek Kumar Ghosh</Typography>
+            <Typography variant="h5" className={classes.topHeading}>
+              Vivek Kumar Ghosh
+            </Typography>
             <MobileLeftMenuSlider
               onClose={toggleSlider("left", false)}
               open={state.left}

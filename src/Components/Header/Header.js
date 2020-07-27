@@ -24,7 +24,11 @@ const useStyles = makeStyles((theme) => ({
     transform: "translate(-50%, -50%)",
     width: "100vw",
     textAlign: "center",
-    zIndex: 1,
+    zIndex: 0.5,
+  },
+  description: {
+    marginTop: "5px",
+    color: "tan",
   },
 }));
 
@@ -59,16 +63,16 @@ const Header = () => {
         />
       </Typography>
 
-      <Typography className={classes.subTitle} variant="h5">
+      <Typography className={classes.description} variant="h5">
         <Typed
-          strings={["Uttaranchal University", "Dehradun", "Uttarakhand, India"]}
+          strings={["Uttaranchal University", "Dehradun, Uttarakhand, India"]}
           backspeed={30}
           typeSpeed={90}
           loop
         />
       </Typography>
 
-      <Typography className={classes.subTitle} variant="h5">
+      <Typography className={classes.description} variant="h5">
         <Typed
           strings={[
             "C/C++",

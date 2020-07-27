@@ -8,7 +8,7 @@ const useStyles = makeStyles({
   particlesCanva: {
     position: "absolute",
     width: "100%",
-    opacity: "0.5",
+    opacity: "0.75",
   },
 });
 
@@ -22,7 +22,7 @@ export function Index() {
         params={{
           particles: {
             number: {
-              value: 250,
+              value: 160,
               density: {
                 enable: true,
               },
@@ -32,22 +32,13 @@ export function Index() {
               random: true,
             },
             move: {
-              out_mode: "out",
+              random: true,
               speed: 1,
               direction: "none",
+              out_mode: "out",
             },
             line_linked: {
               enable: false,
-            },
-            opacity: {
-              value: 1,
-              random: true,
-              anim: {
-                enable: true,
-                speed: 1,
-                opacity_min: 0.1,
-                sync: false,
-              },
             },
           },
           interactivity: {
@@ -62,23 +53,18 @@ export function Index() {
               },
             },
             modes: {
-              repulse: {
-                distance: 400,
-                duration: 1,
-              },
-              remove: {
-                particles_nb: 10,
-              },
               bubble: {
-                size: 15,
-                duration: 1,
-                color: "red",
-                opacity: 0.4,
-                distance: 3,
+                distance: 250,
+                duration: 2,
+                size: 0,
+                opacity: 0,
+              },
+              repulse: {
+                distance: 50,
+                duration: 2,
               },
             },
           },
-          retina_detect: true,
         }}
       />
       <Navbar />
