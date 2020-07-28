@@ -13,6 +13,7 @@ import Community from "././Components/Community/Community";
 import Announcement from "././Components/About/About";
 import Working from "./Components/Working/Working";
 import University from "../src/Components/MyUniversity/MyUniversity";
+import Main from "../src/Components/Main/Main";
 
 const App = () => {
   return (

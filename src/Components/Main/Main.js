@@ -1,7 +1,3 @@
 import React from "react";
-
-function Main(props) {
-  return { props };
-}
-
+const Main = (props) => ({ props });
 export default Main;
