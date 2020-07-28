@@ -1,11 +1,12 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 import Particles from "react-particles-js";
 import Fab from "@material-ui/core/Fab";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import Zoom from "@material-ui/core/Zoom";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import PropTypes from "prop-types";
+import "./Portfolio.css";
 import Toolbar from "@material-ui/core/Toolbar";
 import {
   Box,
@@ -29,8 +30,10 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: "1rem",
   },
   cardContainer: {
-    maxWidth: 350,
+    maxWidth: 450,
+    backgroundColor: "tan",
     margin: "2rem auto",
+    borderColor: "tan",
   },
   particlesCanva: {
     position: "fixed",
@@ -41,6 +44,12 @@ const useStyles = makeStyles((theme) => ({
     position: "fixed",
     bottom: theme.spacing(2),
     right: theme.spacing(2),
+  },
+  projectDetails: {
+    color: "black",
+  },
+  projectSubDetails: {
+    color: "tomato",
   },
 }));
 
@@ -97,14 +106,14 @@ export function Portfolio(props) {
                 },
               },
               size: {
-                value: 7,
+                value: 3,
                 random: true,
               },
               move: {
                 random: true,
-                speed: 2,
+                speed: 0.5,
                 direction: "none",
-                out_mode: "none",
+                out_mode: "out",
               },
               line_linked: {
                 enable: false,
@@ -113,7 +122,7 @@ export function Portfolio(props) {
             interactivity: {
               events: {
                 onhover: {
-                  enable: true,
+                  enable: false,
                   mode: "bubble",
                 },
                 onclick: {
@@ -123,7 +132,7 @@ export function Portfolio(props) {
               },
               modes: {
                 bubble: {
-                  distance: 20,
+                  distance: 250,
                   duration: 2,
                   size: 0,
                   opacity: 0,
@@ -139,7 +148,7 @@ export function Portfolio(props) {
         <Grid container justify="center">
           {/* Project 1 */}
           <Grid item xs={12} sm={8} md={6}>
-            <Card className={classes.cardContainer}>
+            <Card className={classes.cardContainer} variant="outlined">
               <CardActionArea>
                 <CardMedia
                   component="img"
@@ -147,7 +156,10 @@ export function Portfolio(props) {
                   height="140"
                   image={project1}
                 />
-                <CardContent>
+                <CardContent
+                  className={classes.projectDetails}
+                  variant="outlined"
+                >
                   <Typography gutterBottom variant="h5">
                     Project 1
                   </Typography>
@@ -155,16 +167,17 @@ export function Portfolio(props) {
                     variant="body2"
                     color="textSecondary"
                     component="p"
+                    className={classes.projectSubDetails}
                   >
                     Project Details
                   </Typography>
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Button size="small" color="primary">
+                <Button size="medium" variant="outlined">
                   Share
                 </Button>
-                <Button size="small" color="primary">
+                <Button size="medium" variant="outlined">
                   Live Demo
                 </Button>
               </CardActions>
@@ -173,7 +186,7 @@ export function Portfolio(props) {
 
           {/* Project 2 */}
           <Grid item xs={12} sm={8} md={6}>
-            <Card className={classes.cardContainer}>
+            <Card className={classes.cardContainer} variant="outlined">
               <CardActionArea>
                 <CardMedia
                   component="img"
@@ -181,13 +194,14 @@ export function Portfolio(props) {
                   height="140"
                   image={project2}
                 />
-                <CardContent>
+                <CardContent className={classes.projectDetails}>
                   <Typography gutterBottom variant="h5">
-                    Project 1
+                    Project 2
                   </Typography>
                   <Typography
                     variant="body2"
                     color="textSecondary"
+                    className={classes.projectSubDetails}
                     component="p"
                   >
                     Project Details
@@ -195,10 +209,10 @@ export function Portfolio(props) {
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Button size="small" color="primary">
+                <Button size="medium" variant="outlined">
                   Share
                 </Button>
-                <Button size="small" color="primary">
+                <Button size="medium" variant="outlined">
                   Live Demo
                 </Button>
               </CardActions>
@@ -207,7 +221,7 @@ export function Portfolio(props) {
 
           {/* Project 3 */}
           <Grid item xs={12} sm={8} md={6}>
-            <Card className={classes.cardContainer}>
+            <Card className={classes.cardContainer} variant="outlined">
               <CardActionArea>
                 <CardMedia
                   component="img"
@@ -215,24 +229,25 @@ export function Portfolio(props) {
                   height="140"
                   image={project1}
                 />
-                <CardContent>
+                <CardContent className={classes.projectDetails}>
                   <Typography gutterBottom variant="h5">
-                    Project 1
+                    Project 3
                   </Typography>
                   <Typography
                     variant="body2"
                     color="textSecondary"
                     component="p"
+                    className={classes.projectSubDetails}
                   >
                     Project Details
                   </Typography>
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Button size="small" color="primary">
+                <Button size="medium" variant="outlined">
                   Share
                 </Button>
-                <Button size="small" color="primary">
+                <Button size="medium" variant="outlined">
                   Live Demo
                 </Button>
               </CardActions>
@@ -241,7 +256,7 @@ export function Portfolio(props) {
 
           {/* Project 4 */}
           <Grid item xs={12} sm={8} md={6}>
-            <Card className={classes.cardContainer}>
+            <Card className={classes.cardContainer} variant="outlined">
               <CardActionArea>
                 <CardMedia
                   component="img"
@@ -249,92 +264,25 @@ export function Portfolio(props) {
                   height="140"
                   image={project1}
                 />
-                <CardContent>
+                <CardContent className={classes.projectDetails}>
                   <Typography gutterBottom variant="h5">
-                    Project 1
+                    Project 4
                   </Typography>
                   <Typography
                     variant="body2"
                     color="textSecondary"
                     component="p"
+                    className={classes.projectSubDetails}
                   >
                     Project Details
                   </Typography>
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Button size="small" color="primary">
+                <Button size="medium" variant="outlined">
                   Share
                 </Button>
-                <Button size="small" color="primary">
-                  Live Demo
-                </Button>
-              </CardActions>
-            </Card>
-          </Grid>
-
-          {/* Project 5 */}
-          <Grid item xs={12} sm={8} md={6}>
-            <Card className={classes.cardContainer}>
-              <CardActionArea>
-                <CardMedia
-                  component="img"
-                  alt="projecet 1"
-                  height="140"
-                  image={project2}
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5">
-                    Project 1
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color="textSecondary"
-                    component="p"
-                  >
-                    Project Details
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-              <CardActions>
-                <Button size="small" color="primary">
-                  Share
-                </Button>
-                <Button size="small" color="primary">
-                  Live Demo
-                </Button>
-              </CardActions>
-            </Card>
-          </Grid>
-
-          {/* Project 6 */}
-          <Grid item xs={12} sm={8} md={6}>
-            <Card className={classes.cardContainer}>
-              <CardActionArea>
-                <CardMedia
-                  component="img"
-                  alt="projecet 1"
-                  height="140"
-                  image={project1}
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5">
-                    Project 1
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color="textSecondary"
-                    component="p"
-                  >
-                    Project Details
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-              <CardActions>
-                <Button size="small" color="primary">
-                  Share
-                </Button>
-                <Button size="small" color="primary">
+                <Button size="medium" variant="outlined">
                   Live Demo
                 </Button>
               </CardActions>

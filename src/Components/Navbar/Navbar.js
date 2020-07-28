@@ -17,10 +17,17 @@ import {
   Typography,
   Box,
 } from "@material-ui/core";
-import { AssignmentInd, Home, Apps, ContactMail } from "@material-ui/icons";
+import PersonPinCircleIcon from "@material-ui/icons/PersonPinCircle";
+import { AssignmentInd, Home } from "@material-ui/icons";
+import EmailIcon from "@material-ui/icons/Email";
+import ChromeReaderModeIcon from "@material-ui/icons/ChromeReaderMode";
 import avatar from "../../static/vivek.jpg";
 import { makeStyles } from "@material-ui/core/styles";
 import Footer from "../Footer/Footer";
+import SchoolIcon from "@material-ui/icons/School";
+import AnnouncementIcon from "@material-ui/icons/Announcement";
+import AccountTreeSharpIcon from "@material-ui/icons/AccountTreeSharp";
+import ForumSharpIcon from "@material-ui/icons/ForumSharp";
 
 // CSS STYLE for UI
 const useStyles = makeStyles((theme) => ({
@@ -82,14 +89,39 @@ const menuItems = [
     listPath: "/resume",
   },
   {
-    listIcon: <Apps />,
+    listIcon: <ChromeReaderModeIcon />,
     listText: "Portfolio",
     listPath: "/portfolio",
   },
   {
-    listIcon: <ContactMail />,
+    listIcon: <AnnouncementIcon />,
+    listText: "Announcements",
+    listPath: "#announcements",
+  },
+  {
+    listIcon: <AccountTreeSharpIcon />,
+    listText: "Working",
+    listPath: "#working",
+  },
+  {
+    listIcon: <EmailIcon />,
     listText: "Contacts",
     listPath: "/contact",
+  },
+  {
+    listIcon: <PersonPinCircleIcon />,
+    listText: "About Me",
+    listPath: "#about",
+  },
+  {
+    listIcon: <SchoolIcon />,
+    listText: "My Univeristy",
+    listPath: "#myuniversity",
+  },
+  {
+    listIcon: <ForumSharpIcon />,
+    listText: "Community",
+    listPath: "#community",
   },
 ];
 

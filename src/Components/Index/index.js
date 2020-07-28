@@ -23,20 +23,20 @@ export function Index() {
         params={{
           particles: {
             number: {
-              value: 160,
+              value: 200,
               density: {
                 enable: true,
               },
             },
             size: {
-              value: 12,
+              value: 4,
               random: true,
             },
             move: {
               random: true,
               speed: 1,
               direction: "none",
-              out_mode: "out",
+              out_mode: "none",
             },
             line_linked: {
               enable: false,
@@ -45,7 +45,7 @@ export function Index() {
           interactivity: {
             events: {
               onhover: {
-                enable: true,
+                enable: false,
                 mode: "bubble",
               },
               onclick: {

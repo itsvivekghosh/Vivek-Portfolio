@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
       maxWidth: 250,
     },
     "& .MuiSvgIcon-root": {
-      fill: "white",
+      fill: "tan",
       "&:hover": {
         fill: "#1a4566",
         fontSize: "1.8rem",
@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
     "& .MuiSvgIcon-root": {
       fill: "tan",
       "&:hover": {
-        fill: "tan",
+        fill: "white",
         fontSize: "1.8rem",
       },
     },
