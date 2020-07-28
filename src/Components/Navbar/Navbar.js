@@ -16,14 +16,7 @@ import {
   Typography,
   Box,
 } from "@material-ui/core";
-import {
-  AssignmentInd,
-  Home,
-  Apps,
-  ContactMail,
-  GitHub,
-  LinkedIn,
-} from "@material-ui/icons";
+import { AssignmentInd, Home, Apps, ContactMail } from "@material-ui/icons";
 import avatar from "../../static/avatar.png";
 import { makeStyles } from "@material-ui/core/styles";
 import Footer from "../Footer/Footer";

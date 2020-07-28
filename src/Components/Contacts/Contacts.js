@@ -4,6 +4,7 @@ import { TextField, Typography, Button, Grid, Box } from "@material-ui/core";
 import SendIcon from "@material-ui/icons/Send";
 import Navbar from "../../Components/Navbar/Navbar";
 import Particles from "react-particles-js";
+import emailjs from "emailjs-com";
 
 const useStyles = makeStyles((theme) => ({
   form: {
@@ -55,6 +56,24 @@ const InputField = withStyles({
     },
   },
 })(TextField);
+
+function sendEmail(e) {
+  emailjs.init("user_GAsi4jNQqKCyUllJI85AB");
+  e.preventDefault(); //This is important, i'm not sure why, but the email won't send without it
+  console.log(e);
+
+  emailjs
+    .sendForm("gmail", "contact__us", e.target, "user_GAsi4jNQqKCyUllJI85AB")
+    .then(
+      (result) => {
+        console.log(result.text);
+        window.location.reload(); //This is if you still want the page to reload (since e.preventDefault() cancelled that behavior)
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
+}
 
 const Contacts = () => {
   const classes = useStyles();
@@ -113,53 +132,69 @@ const Contacts = () => {
         }}
       />
       <Box component="div" className={classes.boxContainer}>
-        <Grid container justify="center">
-          <Box component="form" className={classes.form}>
-            <Typography variant="h5" className={classes.heading}>
-              Contact Me
-            </Typography>
-            <InputField
-              fullWidth={true}
-              variant="outlined"
-              inputProps={{ style: { color: "white" } }}
-              label="First Name"
-              margin="dense"
-            />
-            <br></br>
-            <InputField
-              fullWidth={true}
-              variant="outlined"
-              inputProps={{ style: { color: "white" } }}
-              label="Last Name"
-              margin="dense"
-            />
-            <br></br>
-            <InputField
-              fullWidth={true}
-              variant="outlined"
-              inputProps={{ style: { color: "white" } }}
-              label="Email"
-              margin="dense"
-            />
-            <br></br>
-            <InputField
-              fullWidth={true}
-              inputProps={{ style: { color: "white" } }}
-              variant="outlined"
-              label="Company Name"
-              margin="dense"
-            />
-            <br></br>
-            <Button
-              className={classes.button}
-              variant="outlined"
-              endIcon={<SendIcon />}
-              fullWidth={true}
-            >
-              Contact Me
-            </Button>
-          </Box>
-        </Grid>
+        <form method="post" onSubmit={sendEmail}>
+          <Grid container justify="center">
+            <Box component="form" className={classes.form}>
+              <Typography variant="h5" className={classes.heading}>
+                Contact Me
+              </Typography>
+              <InputField
+                fullWidth={true}
+                variant="outlined"
+                inputProps={{ style: { color: "white" } }}
+                label="First Name"
+                name="first__name"
+                margin="dense"
+              />
+              <br></br>
+              <InputField
+                fullWidth={true}
+                variant="outlined"
+                inputProps={{ style: { color: "white" } }}
+                label="Last Name"
+                margin="dense"
+                name="last__name"
+              />
+              <br></br>
+              <InputField
+                fullWidth={true}
+                variant="outlined"
+                inputProps={{ style: { color: "white" } }}
+                label="Email"
+                name="from__email"
+                margin="dense"
+              />
+              <br></br>
+              <InputField
+                fullWidth={true}
+                inputProps={{ style: { color: "white" } }}
+                variant="outlined"
+                label="Company Name"
+                name="company__name"
+                margin="dense"
+              />
+              <br></br>
+              <InputField
+                name="message"
+                fullWidth={true}
+                inputProps={{ style: { color: "white" } }}
+                variant="outlined"
+                label="Message"
+                margin="dense"
+              />
+              <br></br>
+              <Button
+                className={classes.button}
+                variant="outlined"
+                endIcon={<SendIcon />}
+                type="submit"
+                fullWidth={true}
+              >
+                Contact Me
+              </Button>
+            </Box>
+          </Grid>
+        </form>
       </Box>
     </div>
   );
