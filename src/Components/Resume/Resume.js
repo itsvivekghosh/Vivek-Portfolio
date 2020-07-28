@@ -1,11 +1,30 @@
+/* eslint-disable */
 import React from "react";
 import Navbar from "../Navbar/Navbar";
 import { Typography, Box } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import Particles from "react-particles-js";
+import Fab from "@material-ui/core/Fab";
+import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
+import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
+import Zoom from "@material-ui/core/Zoom";
+import useScrollTrigger from "@material-ui/core/useScrollTrigger";
+import PropTypes from "prop-types";
+import Toolbar from "@material-ui/core/Toolbar";
 
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
     background: "#2b2b2b",
+  },
+  particlesCanva: {
+    position: "fixed",
+    width: "100%",
+    opacity: "0.75",
+  },
+  root: {
+    position: "fixed",
+    bottom: theme.spacing(2),
+    right: theme.spacing(2),
   },
   timeLine: {
     position: "relative",
@@ -103,12 +122,101 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Resume = () => {
+function ScrollTop(props) {
+  const { children, window } = props;
+  const classes = useStyles();
+
+  const trigger = useScrollTrigger({
+    target: window ? window() : undefined,
+    disableHysteresis: true,
+    threshold: 100,
+  });
+
+  const handleClick = (event) => {
+    const anchor = (event.target.ownerDocument || document).querySelector(
+      "#back-to-top-anchor"
+    );
+
+    if (anchor) {
+      anchor.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  };
+
+  return (
+    <Zoom in={trigger}>
+      <div onClick={handleClick} role="presentation" className={classes.root}>
+        {children}
+      </div>
+    </Zoom>
+  );
+}
+
+ScrollTop.propTypes = {
+  children: PropTypes.element.isRequired,
+  window: PropTypes.func,
+};
+
+const Resume = (props) => {
   const classes = useStyles();
 
   return (
     <>
       <Navbar />
+      <Toolbar id="back-to-top-anchor" />
+      <Particles
+        canvasClassName={classes.particlesCanva}
+        params={{
+          particles: {
+            number: {
+              value: 160,
+              density: {
+                enable: false,
+              },
+            },
+            size: {
+              value: 3,
+              random: true,
+              anim: {
+                speed: 2,
+                size_min: 0.3,
+              },
+            },
+            line_linked: {
+              enable: false,
+            },
+            move: {
+              random: true,
+              speed: 1,
+              direction: "none",
+              out_mode: "none",
+            },
+          },
+          interactivity: {
+            events: {
+              onhover: {
+                enable: true,
+                mode: "bubble",
+              },
+              onclick: {
+                enable: true,
+                mode: "repulse",
+              },
+            },
+            modes: {
+              bubble: {
+                distance: 250,
+                duration: 2,
+                size: 0,
+                opacity: 0,
+              },
+              repulse: {
+                distance: 400,
+                duration: 4,
+              },
+            },
+          },
+        }}
+      />
       <Box component="header" className={classes.mainContainer}>
         <Typography variant="h4" align="center" className={classes.heading}>
           Working Experience
@@ -232,6 +340,11 @@ const Resume = () => {
             </Typography>
           </Box>
         </Box>
+        <ScrollTop {...props}>
+          <Fab color="secondary" size="larger" aria-label="Scroll back to top">
+            <KeyboardArrowUpIcon />
+          </Fab>
+        </ScrollTop>
       </Box>
     </>
   );

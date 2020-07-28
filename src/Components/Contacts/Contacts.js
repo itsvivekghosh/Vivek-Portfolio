@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import { TextField, Typography, Button, Grid, Box } from "@material-ui/core";
@@ -141,6 +142,7 @@ const Contacts = () => {
               <InputField
                 fullWidth={true}
                 variant="outlined"
+                required
                 inputProps={{ style: { color: "white" } }}
                 label="First Name"
                 name="first__name"
@@ -152,6 +154,7 @@ const Contacts = () => {
                 variant="outlined"
                 inputProps={{ style: { color: "white" } }}
                 label="Last Name"
+                required
                 margin="dense"
                 name="last__name"
               />
@@ -163,6 +166,7 @@ const Contacts = () => {
                 label="Email"
                 name="from__email"
                 margin="dense"
+                required
               />
               <br></br>
               <InputField
@@ -172,6 +176,7 @@ const Contacts = () => {
                 label="Company Name"
                 name="company__name"
                 margin="dense"
+                required
               />
               <br></br>
               <InputField
@@ -181,6 +186,7 @@ const Contacts = () => {
                 variant="outlined"
                 label="Message"
                 margin="dense"
+                required
               />
               <br></br>
               <Button

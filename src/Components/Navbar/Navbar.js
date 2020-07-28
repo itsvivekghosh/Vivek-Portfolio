@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import React from "react";
@@ -17,7 +18,7 @@ import {
   Box,
 } from "@material-ui/core";
 import { AssignmentInd, Home, Apps, ContactMail } from "@material-ui/icons";
-import avatar from "../../static/avatar.png";
+import avatar from "../../static/vivek.jpg";
 import { makeStyles } from "@material-ui/core/styles";
 import Footer from "../Footer/Footer";
 
@@ -31,8 +32,8 @@ const useStyles = makeStyles((theme) => ({
   avatar: {
     display: "block",
     margin: "0.5rem auto",
-    width: theme.spacing(13),
-    height: theme.spacing(13),
+    width: theme.spacing(10),
+    height: theme.spacing(10),
   },
   listItem: {
     color: "tan",
@@ -43,8 +44,8 @@ const useStyles = makeStyles((theme) => ({
   topHeading: {
     fontFamily: "Fira Code, Arial",
     textColor: "tan",
-    paddingTop: "35px",
-    paddingBottom: "30px",
+    paddingTop: "25px",
+    paddingBottom: "20px",
   },
   boxComponent: {
     paddingBottom: "auto",
@@ -54,6 +55,18 @@ const useStyles = makeStyles((theme) => ({
   },
   contacts: {
     alignItems: "right",
+  },
+  insideContainerHeading: {
+    display: "flex",
+    padding: "5px 5px",
+    justifyContent: "center",
+    color: "tan",
+  },
+  insideContainerElement: {
+    display: "flex",
+    color: "wheat",
+    fontSize: "12px",
+    justifyContent: "center",
   },
 }));
 
@@ -101,6 +114,18 @@ const Navbar = () => {
       onClick={toggleSlider("left", false)}
     >
       <Avatar className={classes.avatar} src={avatar} alt="Vivek Kumar Ghosh" />
+      <Typography variant="h5" className={classes.insideContainerHeading}>
+        Vivek Kumar Ghosh
+      </Typography>
+      <Typography variant="p" className={classes.insideContainerElement}>
+        Bachelor of Technology
+      </Typography>
+      <Typography variant="p" className={classes.insideContainerElement}>
+        Computer Science
+      </Typography>
+      <Typography variant="p" className={classes.insideContainerElement}>
+        Dehradun, Uttarakhand
+      </Typography>
       <Divider />
       <List>
         {menuItems.map((item, key) => {
@@ -126,7 +151,7 @@ const Navbar = () => {
         position="sticky"
         style={{ background: "#222", position: "fixed" }}
       >
-        <Toolbar>
+        <Toolbar style={{ display: "flex" }}>
           <IconButton
             onClick={toggleSlider("left", true)}
             className={classes.menuButton}

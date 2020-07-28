@@ -1,14 +1,15 @@
+/* eslint-disable */
 import React from "react";
 import { Typography, Avatar, Grid, Box } from "@material-ui/core";
-import avatar from "../../static/avatar.png";
+import avatar from "../../static/vivek.jpg";
 import Typed from "react-typed";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   avatar: {
-    width: theme.spacing(15),
-    height: theme.spacing(15),
-    margin: theme.spacing(1),
+    width: theme.spacing(25),
+    height: theme.spacing(25),
+    margin: theme.spacing(2),
   },
   title: {
     color: "tomato",

@@ -24,7 +24,7 @@ import project2 from "../../static/coffee-apple.jpg";
 
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
-    background: "#2b2b2b",
+    background: "#121212",
     height: "100%",
     paddingTop: "1rem",
   },
@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
   particlesCanva: {
     position: "fixed",
     width: "100%",
-    opacity: "0.75",
+    opacity: "0.9",
   },
   root: {
     position: "fixed",
@@ -85,25 +85,26 @@ export function Portfolio(props) {
     <React.Fragment>
       <Box component="div" className={classes.mainContainer}>
         <Navbar />
+        <Toolbar id="back-to-top-anchor" />
         <Particles
           canvasClassName={classes.particlesCanva}
           params={{
             particles: {
               number: {
-                value: 80,
+                value: 100,
                 density: {
                   enable: true,
                 },
               },
               size: {
-                value: 5,
+                value: 7,
                 random: true,
               },
               move: {
                 random: true,
-                speed: 1,
+                speed: 2,
                 direction: "none",
-                out_mode: "out",
+                out_mode: "none",
               },
               line_linked: {
                 enable: false,
@@ -135,7 +136,6 @@ export function Portfolio(props) {
             },
           }}
         />
-        <Toolbar id="back-to-top-anchor" />
         <Grid container justify="center">
           {/* Project 1 */}
           <Grid item xs={12} sm={8} md={6}>
