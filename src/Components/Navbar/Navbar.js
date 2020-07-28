@@ -16,26 +16,16 @@ import {
   Box,
 } from "@material-ui/core";
 
-import {
-  ArrowBack,
-  AssignmentInd,
-  Home,
-  Apps,
-  GitHub,
-  Twitter,
-  Facebook,
-  LinkedIn,
-  ContactMail,
-} from "@material-ui/icons";
+import { AssignmentInd, Home, Apps, ContactMail } from "@material-ui/icons";
 import avatar from "../../static/avatar.png";
 import { makeStyles } from "@material-ui/core/styles";
 
 // CSS STYLE for UI
 const useStyles = makeStyles((theme) => ({
   menuSliderContainer: {
-    width: 250,
-    background: "#511",
-    height: "40rem",
+    width: 350,
+    background: "#2d2d2d",
+    height: "50rem",
   },
   avatar: {
     display: "block",
@@ -50,7 +40,9 @@ const useStyles = makeStyles((theme) => ({
     color: "tan",
   },
   topHeading: {
-    position: "relative",
+    textColor: "tan",
+    paddingTop: "35px",
+    paddingBottom: "30px",
   },
 }));
 
@@ -123,7 +115,7 @@ const Navbar = () => {
         <AppBar position="sticky" style={{ background: "#222" }}>
           <Toolbar>
             <IconButton onClick={toggleSlider("left", true)}>
-              <Apps style={{ color: "tomato" }} />
+              <Apps style={{ color: "tan" }} />
             </IconButton>
             <Typography variant="h5" className={classes.topHeading}>
               Vivek Kumar Ghosh
