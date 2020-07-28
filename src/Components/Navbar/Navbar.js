@@ -32,7 +32,7 @@ import ForumSharpIcon from "@material-ui/icons/ForumSharp";
 // CSS STYLE for UI
 const useStyles = makeStyles((theme) => ({
   menuSliderContainer: {
-    width: 350,
+    width: "auto",
     height: 800,
     background: "#2d2d2d",
   },
@@ -42,16 +42,27 @@ const useStyles = makeStyles((theme) => ({
     width: theme.spacing(10),
     height: theme.spacing(10),
   },
-  listItem: {
+  listItemText: {
     color: "tan",
   },
-  listText: {
+  listItemIcon: {
     color: "tan",
+    "& .MuiNavigationAction-root": {
+      minWidth: 0,
+      maxWidth: 250,
+    },
+    "& .MuiSvgIcon-root": {
+      fill: "tan",
+      "&:hover": {
+        fill: "white",
+      },
+    },
   },
   topHeading: {
     fontFamily: "Fira Code, Arial",
     textColor: "tan",
     paddingTop: "25px",
+    textAlign: "center",
     paddingBottom: "20px",
   },
   boxComponent: {
@@ -59,6 +70,16 @@ const useStyles = makeStyles((theme) => ({
   },
   menuButton: {
     marginRight: theme.spacing(5),
+    "& .MuiNavigationAction-root": {
+      minWidth: 0,
+      maxWidth: 250,
+    },
+    "& .MuiSvgIcon-root": {
+      fill: "tan",
+      "&:hover": {
+        fill: "white",
+      },
+    },
   },
   contacts: {
     alignItems: "right",
@@ -104,24 +125,24 @@ const menuItems = [
     listPath: "#working",
   },
   {
+    listIcon: <SchoolIcon />,
+    listText: "My University",
+    listPath: "#myuniveristy",
+  },
+  {
+    listIcon: <ForumSharpIcon />,
+    listText: "Community",
+    listPath: "#community",
+  },
+  {
     listIcon: <EmailIcon />,
-    listText: "Contacts",
+    listText: "Contact Me",
     listPath: "/contact",
   },
   {
     listIcon: <PersonPinCircleIcon />,
     listText: "About Me",
     listPath: "#about",
-  },
-  {
-    listIcon: <SchoolIcon />,
-    listText: "My Univeristy",
-    listPath: "#myuniversity",
-  },
-  {
-    listIcon: <ForumSharpIcon />,
-    listText: "Community",
-    listPath: "#community",
   },
 ];
 
@@ -163,12 +184,12 @@ const Navbar = () => {
         {menuItems.map((item, key) => {
           return (
             <ListItem button key={key} component={Link} to={item.listPath}>
-              <ListItemIcon className={classes.listItem}>
+              <ListItemIcon className={classes.listItemIcon}>
                 {item.listIcon}
               </ListItemIcon>
               <ListItemText
                 primary={item.listText}
-                className={classes.listItem}
+                className={classes.listItemText}
               />
             </ListItem>
           );

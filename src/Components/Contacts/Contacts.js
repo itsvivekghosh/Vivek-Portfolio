@@ -1,11 +1,19 @@
 /* eslint-disable */
 import React from "react";
+import IconButton from "@material-ui/core/IconButton";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import { TextField, Typography, Button, Grid, Box } from "@material-ui/core";
 import SendIcon from "@material-ui/icons/Send";
 import Navbar from "../../Components/Navbar/Navbar";
 import Particles from "react-particles-js";
 import emailjs from "emailjs-com";
+import Footer from "../Footer/Footer";
+import Facebook from "@material-ui/icons/Facebook";
+import Instagram from "@material-ui/icons/Instagram";
+import LinkedIn from "@material-ui/icons/LinkedIn";
+import GitHub from "@material-ui/icons/GitHub";
+import Twitter from "@material-ui/icons/Twitter";
+import YouTubeIcon from "@material-ui/icons/YouTube";
 
 const useStyles = makeStyles((theme) => ({
   form: {
@@ -33,6 +41,83 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     height: "100%",
     opacity: 0.3,
+  },
+  paper: {
+    padding: theme.spacing(2),
+    textAlign: "center",
+    color: theme.palette.text.secondary,
+  },
+  Facebook: {
+    "& .MuiNavigationAction-root": {
+      minWidth: 0,
+      maxWidth: 250,
+    },
+    "& .MuiSvgIcon-root": {
+      fill: "tan",
+      "&:hover": {
+        fill: "#1a4566",
+      },
+    },
+  },
+  Instagram: {
+    "& .MuiNavigationAction-root": {
+      minWidth: 0,
+      maxWidth: 250,
+    },
+    "& .MuiSvgIcon-root": {
+      fill: "tan",
+      "&:hover": {
+        fill: "#f037b2",
+      },
+    },
+  },
+  GitHub: {
+    "& .MuiNavigationAction-root": {
+      minWidth: 0,
+      maxWidth: 250,
+    },
+    "& .MuiSvgIcon-root": {
+      fill: "tan",
+      "&:hover": {
+        fill: "white",
+      },
+    },
+  },
+  LinkedIn: {
+    "& .MuiNavigationAction-root": {
+      minWidth: 0,
+      maxWidth: 250,
+    },
+    "& .MuiSvgIcon-root": {
+      fill: "tan",
+      "&:hover": {
+        fill: "#0384fc",
+      },
+    },
+  },
+  Twitter: {
+    "& .MuiNavigationAction-root": {
+      minWidth: 0,
+      maxWidth: 250,
+    },
+    "& .MuiSvgIcon-root": {
+      fill: "tan",
+      "&:hover": {
+        fill: "#0384fc",
+      },
+    },
+  },
+  Youtube: {
+    "& .MuiNavigationAction-root": {
+      minWidth: 0,
+      maxWidth: 250,
+    },
+    "& .MuiSvgIcon-root": {
+      fill: "tan",
+      "&:hover": {
+        fill: "#f2273b",
+      },
+    },
   },
 }));
 
@@ -198,6 +283,69 @@ const Contacts = () => {
               >
                 Contact Me
               </Button>
+              {/* Contact Me on Social Media */}
+              <div>
+                <div>
+                  <p
+                    style={{
+                      textAlign: "center",
+                      paddingTop: "2px",
+                      paddingBottom: 0,
+                      color: "tan",
+                    }}
+                  >
+                    Connect With Me on Social Media Apps
+                  </p>
+                </div>
+                <IconButton aria-label="delete" className={classes.Facebook}>
+                  <a
+                    href="https://www.facebook.com/itsvivekghosh/"
+                    target="_blank"
+                  >
+                    <Facebook fontSize="large" />
+                  </a>
+                </IconButton>
+                <IconButton aria-label="delete" className={classes.Instagram}>
+                  <a
+                    href="https://www.instagram.com/vvivekghosh/"
+                    target="_blank"
+                  >
+                    <Instagram fontSize="large" />
+                  </a>
+                </IconButton>
+                <IconButton aria-label="delete" className={classes.Twitter}>
+                  <a
+                    href="https://www.twitter.com/itsvivekghosh/"
+                    target="_blank"
+                  >
+                    <Twitter fontSize="large" />
+                  </a>
+                </IconButton>
+                <IconButton aria-label="delete" className={classes.GitHub}>
+                  <a
+                    href="https://www.github.com/itsvivekghosh/"
+                    target="_blank"
+                  >
+                    <GitHub fontSize="large" />
+                  </a>
+                </IconButton>
+                <IconButton aria-label="delete" className={classes.LinkedIn}>
+                  <a
+                    href="https://www.linkedin.com/in/itsvivekghosh/"
+                    target="_blank"
+                  >
+                    <LinkedIn fontSize="large" />
+                  </a>
+                </IconButton>
+                <IconButton aria-label="delete" className={classes.Youtube}>
+                  <a
+                    href="https://www.youtube.com/#itsvivekghosh"
+                    target="_blank"
+                  >
+                    <YouTubeIcon fontSize="large" />
+                  </a>
+                </IconButton>
+              </div>
             </Box>
           </Grid>
         </form>

@@ -4,6 +4,8 @@ import { Typography, Avatar, Grid, Box } from "@material-ui/core";
 import avatar from "../../static/vivek.jpg";
 import Typed from "react-typed";
 import { makeStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   avatar: {
@@ -30,6 +32,9 @@ const useStyles = makeStyles((theme) => ({
   description: {
     marginTop: "5px",
     color: "tan",
+  },
+  resumeButton: {
+    color: "tomato",
   },
 }));
 
@@ -94,6 +99,16 @@ const Header = () => {
           typeSpeed={90}
           loop
         />
+        <br></br>
+        <br></br>
+        <Button
+          size="large"
+          className={classes.resumeButton}
+          component={Link}
+          to="/resume"
+        >
+          Resume
+        </Button>
       </Typography>
     </Box>
   );
