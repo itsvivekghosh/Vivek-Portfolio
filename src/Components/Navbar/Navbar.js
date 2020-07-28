@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import React from "react";
 import MobileLeftMenuSlider from "@material-ui/core/Drawer/Drawer";
+import MenuIcon from "@material-ui/icons/Menu";
 import {
   AppBar,
   Toolbar,
@@ -15,17 +16,24 @@ import {
   Typography,
   Box,
 } from "@material-ui/core";
-
-import { AssignmentInd, Home, Apps, ContactMail } from "@material-ui/icons";
+import {
+  AssignmentInd,
+  Home,
+  Apps,
+  ContactMail,
+  GitHub,
+  LinkedIn,
+} from "@material-ui/icons";
 import avatar from "../../static/avatar.png";
 import { makeStyles } from "@material-ui/core/styles";
+import Footer from "../Footer/Footer";
 
 // CSS STYLE for UI
 const useStyles = makeStyles((theme) => ({
   menuSliderContainer: {
     width: 350,
+    height: 800,
     background: "#2d2d2d",
-    height: "50rem",
   },
   avatar: {
     display: "block",
@@ -40,9 +48,19 @@ const useStyles = makeStyles((theme) => ({
     color: "tan",
   },
   topHeading: {
+    fontFamily: "Fira Code, Arial",
     textColor: "tan",
     paddingTop: "35px",
     paddingBottom: "30px",
+  },
+  boxComponent: {
+    paddingBottom: "auto",
+  },
+  menuButton: {
+    marginRight: theme.spacing(5),
+  },
+  contacts: {
+    alignItems: "right",
   },
 }));
 
@@ -110,27 +128,32 @@ const Navbar = () => {
   );
 
   return (
-    <div>
-      <Box component="nav">
-        <AppBar position="sticky" style={{ background: "#222" }}>
-          <Toolbar>
-            <IconButton onClick={toggleSlider("left", true)}>
-              <Apps style={{ color: "tan" }} />
-            </IconButton>
-            <Typography variant="h5" className={classes.topHeading}>
-              Vivek Kumar Ghosh
-            </Typography>
-            <MobileLeftMenuSlider
-              onClose={toggleSlider("left", false)}
-              open={state.left}
-              anchor="left"
-            >
-              {sideList("left")}
-            </MobileLeftMenuSlider>
-          </Toolbar>
-        </AppBar>
-      </Box>
-    </div>
+    <Box component="nav" className={classes.boxComponent}>
+      <AppBar
+        position="sticky"
+        style={{ background: "#222", position: "fixed" }}
+      >
+        <Toolbar>
+          <IconButton
+            onClick={toggleSlider("left", true)}
+            className={classes.menuButton}
+          >
+            <MenuIcon style={{ color: "tan" }} />
+          </IconButton>
+          <Typography variant="h5" className={classes.topHeading}>
+            Vivek Kumar Ghosh
+          </Typography>
+          <MobileLeftMenuSlider
+            onClose={toggleSlider("left", false)}
+            open={state.left}
+            anchor="left"
+          >
+            {sideList("left")}
+            <Footer />
+          </MobileLeftMenuSlider>
+        </Toolbar>
+      </AppBar>
+    </Box>
   );
 };
 

@@ -5,7 +5,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
-    background: "#233",
+    background: "#2b2b2b",
   },
   timeLine: {
     position: "relative",
@@ -109,7 +109,6 @@ const Resume = () => {
   return (
     <>
       <Navbar />
-
       <Box component="header" className={classes.mainContainer}>
         <Typography variant="h4" align="center" className={classes.heading}>
           Working Experience
