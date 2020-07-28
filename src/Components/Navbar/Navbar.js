@@ -117,22 +117,22 @@ const menuItems = [
   {
     listIcon: <AnnouncementIcon />,
     listText: "Announcements",
-    listPath: "#announcements",
+    listPath: "/announcements",
   },
   {
     listIcon: <AccountTreeSharpIcon />,
     listText: "Working",
-    listPath: "#working",
+    listPath: "/working",
   },
   {
     listIcon: <SchoolIcon />,
     listText: "My University",
-    listPath: "#myuniveristy",
+    listPath: "/myuniversity",
   },
   {
     listIcon: <ForumSharpIcon />,
     listText: "Community",
-    listPath: "#community",
+    listPath: "/community",
   },
   {
     listIcon: <EmailIcon />,
@@ -142,7 +142,7 @@ const menuItems = [
   {
     listIcon: <PersonPinCircleIcon />,
     listText: "About Me",
-    listPath: "#about",
+    listPath: "/about",
   },
 ];
 

@@ -8,17 +8,31 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { Route } from "react-router-dom";
 import Portfolio from "././Components/Portfolio/Portfolio";
 import Contact from "././Components/Contacts/Contacts";
+import About from "././Components/About/About";
+import Community from "././Components/Community/Community";
+import Announcement from "././Components/About/About";
+import Working from "./Components/Working/Working";
+import University from "../src/Components/MyUniversity/MyUniversity";
 
-function App() {
+const App = () => {
   return (
-    <Router>
-      <CssBaseline />
-      <Route exact path="/" component={Home} />
-      <Route path="/resume" component={Resume} />
-      <Route path="/portfolio" component={Portfolio} />
-      <Route path="/contact" component={Contact} />
-    </Router>
+    <React.Fragment>
+      <Router>
+        <CssBaseline />
+        <div>
+          <Route exact path="/" component={Home} />
+          <Route path="/resume" component={Resume} />
+          <Route path="/portfolio" component={Portfolio} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/about" component={About} />
+          <Route path="/community" component={Community} />
+          <Route path="/announcements" component={Announcement} />
+          <Route path="/working" component={Working} />
+          <Route path="/myuniversity" component={University} />
+        </div>
+      </Router>
+    </React.Fragment>
   );
-}
+};
 
 export default App;
