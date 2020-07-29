@@ -16,6 +16,7 @@ import Particles from "react-particles-js";
 import { Link } from "react-router-dom";
 import SendIcon from "@material-ui/icons/Send";
 import Contacts from "@material-ui/icons/Contacts";
+import LocationOnIcon from "@material-ui/icons/LocationOn";
 import Navbar from "../Navbar/Navbar";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import avatarPicture from "../../static/vg.jpg";
@@ -38,8 +39,7 @@ const shareUrl = "vivekuit.herokuapp.com";
 const emails = ["soapmactevis1@gmail.com", "gvivekghosh@gmail.com"];
 const useStyles = makeStyles(theme => ({
   boxContainer: {
-    height: "100vh",
-    backgroundColor: "#121212"
+    height: "auto"
   },
   aboutMeContainer: {
     top: "50%",
@@ -49,8 +49,7 @@ const useStyles = makeStyles(theme => ({
   },
   heading: {
     color: "tomato",
-    textAlign: "center",
-    textDecoration: "underlined"
+    textAlign: "center"
   },
   cardContainer: {
     display: "block",
@@ -58,8 +57,9 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: "wheat",
     borderColor: "wheat"
   },
-  subdetails: {
+  subDetails: {
     display: "block",
+    textAlign: "center",
     color: "black"
   },
   cardButtons: {
@@ -78,7 +78,7 @@ const useStyles = makeStyles(theme => ({
     textAlign: "center",
     color: "black"
   },
-  shareButton: {
+  locationButton: {
     color: "teal",
     backgroundColor: "white"
   },
@@ -95,6 +95,10 @@ const useStyles = makeStyles(theme => ({
     display: "block",
     alignItems: "center",
     backgroundColor: "#e0e0e0"
+  },
+  shareButton: {
+    color: "green",
+    backgroundColor: "white"
   }
 }));
 
@@ -268,11 +272,20 @@ export function Portfolio(props) {
                     component="p"
                     className={classes.subDetails}
                   >
-                    A Happy Coder!
+                    <p>
+                      A Developer! A Bachelor Student from Uttaranchal
+                      University, Dehradun and a Future Personic Engineer with a
+                      number of ideas and creativity and strong passion for
+                      self-improvement. I have strong Problem Solving Skills &
+                      bring energy, patience, positivity and cultural values to
+                      the team. Bookmarked Data Scientist and a Problem-Solver.
+                      Love Data Activities and Sciences. <br></br>
+                      <strong> A Happy Coder!</strong>
+                    </p>
                   </Typography>
                 </CardContent>
               </CardActionArea>
-              <CardActions className={classes.cardButtons}>
+              <CardActions>
                 <Button
                   size="medium"
                   variant="contained"
@@ -291,6 +304,15 @@ export function Portfolio(props) {
                   to={"/contact"}
                 >
                   Contact Me
+                </Button>
+                <Button
+                  size="medium"
+                  variant="contained"
+                  endIcon={<LocationOnIcon></LocationOnIcon>}
+                  className={classes.locationButton}
+                  href="https://goo.gl/maps/zs28WFEbyBbuDNUn9"
+                >
+                  My Location
                 </Button>
                 <SimpleDialog
                   selectedValue={selectedValue}

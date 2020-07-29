@@ -16,43 +16,41 @@ import {
   CardContent,
   CardMedia,
   Button,
-  Typography,
+  Typography
 } from "@material-ui/core";
 import Navbar from "../Navbar/Navbar";
-import project1 from "../../static/coffee-apple.jpg";
-import project2 from "../../static/coffee-apple.jpg";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   mainContainer: {
     background: "#121212",
-    height: "100vh",
+    height: "auto"
   },
   cardContainer: {
-    maxWidth: 350,
+    maxWidth: 400,
     backgroundColor: "tan",
     margin: "2rem auto",
-    borderColor: "tan",
+    borderColor: "tan"
   },
   particlesCanva: {
     position: "fixed",
     width: "100%",
-    opacity: "0.9",
+    opacity: "0.9"
   },
   root: {
     position: "fixed",
     bottom: theme.spacing(2),
-    right: theme.spacing(2),
+    right: theme.spacing(2)
   },
   projectDetails: {
-    color: "black",
+    color: "black"
   },
   projectSubDetails: {
-    color: "tomato",
+    color: "black"
   },
   upArrow: {
     backgroundColor: "tan",
-    color: "black",
-  },
+    color: "black"
+  }
 }));
 
 function ScrollTop(props) {
@@ -62,10 +60,10 @@ function ScrollTop(props) {
   const trigger = useScrollTrigger({
     target: window ? window() : undefined,
     disableHysteresis: true,
-    threshold: 100,
+    threshold: 100
   });
 
-  const handleClick = (event) => {
+  const handleClick = event => {
     const anchor = (event.target.ownerDocument || document).querySelector(
       "#back-to-top-anchor"
     );
@@ -86,7 +84,7 @@ function ScrollTop(props) {
 
 ScrollTop.propTypes = {
   children: PropTypes.element.isRequired,
-  window: PropTypes.func,
+  window: PropTypes.func
 };
 
 export function Portfolio(props) {
@@ -103,47 +101,47 @@ export function Portfolio(props) {
             number: {
               value: 100,
               density: {
-                enable: true,
-              },
+                enable: true
+              }
             },
             size: {
               value: 3,
-              random: true,
+              random: true
             },
             move: {
               random: true,
               speed: 0.5,
               direction: "none",
-              out_mode: "out",
+              out_mode: "out"
             },
             line_linked: {
-              enable: false,
-            },
+              enable: false
+            }
           },
           interactivity: {
             events: {
               onhover: {
                 enable: false,
-                mode: "bubble",
+                mode: "bubble"
               },
               onclick: {
                 enable: true,
-                mode: "repulse",
-              },
+                mode: "repulse"
+              }
             },
             modes: {
               bubble: {
                 distance: 250,
                 duration: 2,
                 size: 0,
-                opacity: 0,
+                opacity: 0
               },
               repulse: {
                 distance: 50,
-                duration: 2,
-              },
-            },
-          },
+                duration: 2
+              }
+            }
+          }
         }}
       />
       <Box component="div" className={classes.mainContainer}>
@@ -154,16 +152,18 @@ export function Portfolio(props) {
               <CardActionArea>
                 <CardMedia
                   component="img"
-                  alt="projecet 1"
-                  height="140"
-                  image={project1}
+                  alt="TextShot"
+                  height="150"
+                  image={
+                    "https://github.com/itsvivekghosh/textshot/blob/master/TextShot.png?raw=true"
+                  }
                 />
                 <CardContent
                   className={classes.projectDetails}
                   variant="outlined"
                 >
                   <Typography gutterBottom variant="h5">
-                    Project 1
+                    TextShot
                   </Typography>
                   <Typography
                     variant="body2"
@@ -171,7 +171,16 @@ export function Portfolio(props) {
                     component="p"
                     className={classes.projectSubDetails}
                   >
-                    Project Details
+                    This application is very useful in certain circumstances
+                    where we have to immediately capture the text from the
+                    picture.Inorder to do that we generally write the text from
+                    the image by taking a note of every word. But, i have
+                    designed an application that can take the take to your
+                    clipboard of your machine and can be copied to any Text
+                    Editor. This feature is tested on Windows 10 and Ubuntu
+                    10.04 Operating Systems. The Data is also secured that means
+                    that there no data theft. The Application has minor
+                    per-requisites that is mentionedin my gitHub repo.
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -194,11 +203,13 @@ export function Portfolio(props) {
                   component="img"
                   alt="projecet 1"
                   height="140"
-                  image={project2}
+                  image={
+                    "https://github.com/itsvivekghosh/Hand-Sign_Detection_and_Prediction/raw/master/Outputs/ONE.png"
+                  }
                 />
                 <CardContent className={classes.projectDetails}>
                   <Typography gutterBottom variant="h5">
-                    Project 2
+                    Hand-Sign Detection
                   </Typography>
                   <Typography
                     variant="body2"
@@ -206,7 +217,11 @@ export function Portfolio(props) {
                     className={classes.projectSubDetails}
                     component="p"
                   >
-                    Project Details
+                    This Project will recognize the Sign made by the Hand. the
+                    Sign can various Numbers from 0 to 9. This is made by Using
+                    Deep Learning, Computer Vision and Tensorflow. This
+                    application is very helpful for detecting the signs who does
+                    not have knowledge of knowing visually impaired Languages.
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -229,11 +244,13 @@ export function Portfolio(props) {
                   component="img"
                   alt="projecet 1"
                   height="140"
-                  image={project1}
+                  image={
+                    "https://res.cloudinary.com/practicaldev/image/fetch/s--qJ3sPTzg--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://res.cloudinary.com/practicaldev/image/fetch/s--1u3Uz9sp--/c_imagga_scale%2Cf_auto%2Cfl_progressive%2Ch_420%2Cq_auto%2Cw_1000/https://dev-to-uploads.s3.amazonaws.com/i/ojmek5e5tihf1p655ju6.png"
+                  }
                 />
                 <CardContent className={classes.projectDetails}>
                   <Typography gutterBottom variant="h5">
-                    Project 3
+                    Face-Mask Detector
                   </Typography>
                   <Typography
                     variant="body2"
@@ -241,7 +258,10 @@ export function Portfolio(props) {
                     component="p"
                     className={classes.projectSubDetails}
                   >
-                    Project Details
+                    During COVID 19 Pandemic, i designed an applicaion that
+                    detects the masks on human faces. This application detects
+                    the mask on the face and tells that the warning to wear the
+                    Mask.
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -264,11 +284,13 @@ export function Portfolio(props) {
                   component="img"
                   alt="projecet 1"
                   height="140"
-                  image={project1}
+                  image={
+                    "https://github.com/itsvivekghosh/YOLO_Object_Detection/raw/master/room1.png"
+                  }
                 />
                 <CardContent className={classes.projectDetails}>
                   <Typography gutterBottom variant="h5">
-                    Project 4
+                    Object Detector
                   </Typography>
                   <Typography
                     variant="body2"
@@ -276,7 +298,8 @@ export function Portfolio(props) {
                     component="p"
                     className={classes.projectSubDetails}
                   >
-                    Project Details
+                    This application Detects the Objects in its surroundings and
+                    tells the probabilities of each object with the Masking.
                   </Typography>
                 </CardContent>
               </CardActionArea>

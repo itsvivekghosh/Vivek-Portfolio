@@ -15,7 +15,7 @@ import {
   Divider,
   List,
   Typography,
-  Box,
+  Box
 } from "@material-ui/core";
 import PersonPinCircleIcon from "@material-ui/icons/PersonPinCircle";
 import { AssignmentInd, Home } from "@material-ui/icons";
@@ -31,144 +31,144 @@ import ForumSharpIcon from "@material-ui/icons/ForumSharp";
 import CardMembershipIcon from "@material-ui/icons/CardMembership";
 
 // CSS STYLE for UI
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   menuSliderContainer: {
     width: "auto",
     height: "100vh",
     background: "#2d2d2d",
     msOverflowY: "scroll",
-    msOverflowX: "hidden",
+    msOverflowX: "hidden"
   },
   avatar: {
     display: "block",
     margin: "0.5rem auto",
     width: theme.spacing(12),
-    height: theme.spacing(12),
+    height: theme.spacing(12)
   },
   listItemText: {
-    color: "tan",
+    color: "tan"
   },
   listItemIcon: {
     color: "tan",
     "& .MuiNavigationAction-root": {
       minWidth: 0,
-      maxWidth: 250,
+      maxWidth: 250
     },
     "& .MuiSvgIcon-root": {
       fill: "tan",
       "&:hover": {
-        fill: "white",
-      },
-    },
+        fill: "white"
+      }
+    }
   },
   topHeading: {
     fontFamily: "Fira Code, Arial",
     textColor: "tan",
     paddingTop: "25px",
     textAlign: "center",
-    paddingBottom: "20px",
+    paddingBottom: "20px"
   },
   boxComponent: {
-    paddingBottom: "auto",
+    paddingBottom: "auto"
   },
   menuButton: {
     marginRight: theme.spacing(5),
     "& .MuiNavigationAction-root": {
       minWidth: 0,
-      maxWidth: 250,
+      maxWidth: 250
     },
     "& .MuiSvgIcon-root": {
       fill: "tan",
       "&:hover": {
-        fill: "white",
-      },
-    },
+        fill: "white"
+      }
+    }
   },
   contacts: {
-    alignItems: "right",
+    alignItems: "right"
   },
   insideContainerHeading: {
     display: "flex",
     padding: "5px 5px",
     justifyContent: "center",
-    color: "tan",
+    color: "tan"
   },
   insideContainerElement: {
     display: "flex",
     color: "wheat",
     fontSize: "12px",
-    justifyContent: "center",
-  },
+    justifyContent: "center"
+  }
 }));
 
 const menuItems = [
   {
     listIcon: <Home />,
     listText: "Home",
-    listPath: "/",
+    listPath: "/"
   },
   {
     listIcon: <AssignmentInd />,
     listText: "Resume",
-    listPath: "/resume",
+    listPath: "/resume"
   },
   {
     listIcon: <ChromeReaderModeIcon />,
     listText: "Projects",
-    listPath: "/projects",
+    listPath: "/projects"
   },
   {
     listIcon: <SchoolIcon />,
-    listText: "Adademics",
-    listPath: "#academics",
+    listText: "Academics",
+    listPath: "#academics"
   },
   {
     listIcon: <CardMembershipIcon />,
     listText: "Certifications",
-    listPath: "/certificates",
+    listPath: "/certificates"
   },
   {
     listIcon: <AccountTreeSharpIcon />,
     listText: "Working",
-    listPath: "#working",
+    listPath: "#working"
   },
   {
     listIcon: <ForumSharpIcon />,
     listText: "Community",
-    listPath: "#community",
+    listPath: "#community"
   },
   {
     listIcon: <AnnouncementIcon />,
     listText: "Announcements",
-    listPath: "#announcements",
+    listPath: "#announcements"
   },
   {
     listIcon: <EmailIcon />,
     listText: "Contact Me",
-    listPath: "/contact",
+    listPath: "/contact"
   },
   {
     listIcon: <PersonPinCircleIcon />,
     listText: "About Me",
-    listPath: "/about",
-  },
+    listPath: "/about"
+  }
 ];
 
 const Navbar = () => {
   const [state, setState] = useState({
-    left: false,
+    left: false
   });
 
   const toggleSlider = (slider, open) => () => {
     setState({
       ...state,
-      [slider]: open,
+      [slider]: open
     });
   };
 
   const classes = useStyles();
 
-  const sideList = (slider) => (
+  const sideList = slider => (
     <Box
       className={classes.menuSliderContainer}
       component="div"

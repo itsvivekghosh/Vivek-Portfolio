@@ -16,43 +16,43 @@ import {
   CardContent,
   CardMedia,
   Button,
-  Typography,
+  Typography
 } from "@material-ui/core";
 import Navbar from "../Navbar/Navbar";
 import project1 from "../../static/coffee-apple.jpg";
 import project2 from "../../static/coffee-apple.jpg";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   mainContainer: {
     background: "#121212",
-    height: "100vh",
+    height: "100vh"
   },
   cardContainer: {
     maxWidth: 350,
     backgroundColor: "tan",
     margin: "2rem auto",
-    borderColor: "tan",
+    borderColor: "tan"
   },
   particlesCanva: {
     position: "fixed",
     width: "100%",
-    opacity: "0.9",
+    opacity: "0.9"
   },
   root: {
     position: "fixed",
     bottom: theme.spacing(2),
-    right: theme.spacing(2),
+    right: theme.spacing(2)
   },
   projectDetails: {
-    color: "black",
+    color: "black"
   },
   projectSubDetails: {
-    color: "tomato",
+    color: "tomato"
   },
   upArrow: {
     backgroundColor: "tan",
-    color: "black",
-  },
+    color: "black"
+  }
 }));
 
 function ScrollTop(props) {
@@ -62,10 +62,10 @@ function ScrollTop(props) {
   const trigger = useScrollTrigger({
     target: window ? window() : undefined,
     disableHysteresis: true,
-    threshold: 100,
+    threshold: 100
   });
 
-  const handleClick = (event) => {
+  const handleClick = event => {
     const anchor = (event.target.ownerDocument || document).querySelector(
       "#back-to-top-anchor"
     );
@@ -86,7 +86,7 @@ function ScrollTop(props) {
 
 ScrollTop.propTypes = {
   children: PropTypes.element.isRequired,
-  window: PropTypes.func,
+  window: PropTypes.func
 };
 
 export function Portfolio(props) {
@@ -103,47 +103,47 @@ export function Portfolio(props) {
             number: {
               value: 100,
               density: {
-                enable: true,
-              },
+                enable: true
+              }
             },
             size: {
               value: 3,
-              random: true,
+              random: true
             },
             move: {
               random: true,
               speed: 0.5,
               direction: "none",
-              out_mode: "out",
+              out_mode: "out"
             },
             line_linked: {
-              enable: false,
-            },
+              enable: false
+            }
           },
           interactivity: {
             events: {
               onhover: {
                 enable: false,
-                mode: "bubble",
+                mode: "bubble"
               },
               onclick: {
                 enable: true,
-                mode: "repulse",
-              },
+                mode: "repulse"
+              }
             },
             modes: {
               bubble: {
                 distance: 250,
                 duration: 2,
                 size: 0,
-                opacity: 0,
+                opacity: 0
               },
               repulse: {
                 distance: 50,
-                duration: 2,
-              },
-            },
-          },
+                duration: 2
+              }
+            }
+          }
         }}
       />
       <Box component="div" className={classes.mainContainer}>
