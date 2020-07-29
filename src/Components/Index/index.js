@@ -23,49 +23,52 @@ export function Index() {
         params={{
           particles: {
             number: {
-              value: 200,
+              value: 100,
               density: {
                 enable: true,
+                value_area: 1000,
               },
             },
-            size: {
-              value: 4,
-              random: true,
+            line_linked: {
+              enable: true,
+              opacity: 0.02,
             },
             move: {
-              random: true,
-              speed: 1,
-              direction: "none",
-              out_mode: "none",
+              direction: "left",
+              speed: 0.1,
             },
-            line_linked: {
-              enable: false,
+            size: {
+              value: 2,
+            },
+            opacity: {
+              anim: {
+                enable: true,
+                speed: 1,
+                opacity_min: 0.1,
+              },
             },
           },
           interactivity: {
             events: {
-              onhover: {
-                enable: false,
-                mode: "bubble",
-              },
               onclick: {
+                enable: true,
+                mode: "push",
+              },
+              onhover: {
                 enable: true,
                 mode: "repulse",
               },
             },
             modes: {
-              bubble: {
-                distance: 250,
-                duration: 2,
-                size: 0,
-                opacity: 0,
+              push: {
+                particles_nb: 1,
               },
               repulse: {
-                distance: 50,
-                duration: 2,
+                particles_nb: 2,
               },
             },
           },
+          retina_detect: true,
         }}
       />
       <Navbar />

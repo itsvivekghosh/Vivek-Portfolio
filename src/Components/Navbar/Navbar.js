@@ -126,8 +126,8 @@ const menuItems = [
   },
   {
     listIcon: <SchoolIcon />,
-    listText: "My University",
-    listPath: "/myuniversity",
+    listText: "Adademics",
+    listPath: "/academics",
   },
   {
     listIcon: <ForumSharpIcon />,

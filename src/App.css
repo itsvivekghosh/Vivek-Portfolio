@@ -1,5 +1,5 @@
 body {
-  background: url("./static/coffee-apple.jpg") no-repeat center center fixed;
+  background: url("./static/coffee-apple.jpg") repeat fixed;
   -webkit-background: cover;
   -moz-background: cover;
   -o-background: cover;

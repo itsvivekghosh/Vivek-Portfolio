@@ -290,7 +290,7 @@ export function Portfolio(props) {
           </Grid>
         </Grid>
         <ScrollTop {...props}>
-          <Fab color="secondary" size="larger" aria-label="Scroll back to top">
+          <Fab color="primary" size="larger" aria-label="Scroll back to top">
             <KeyboardArrowUpIcon />
           </Fab>
         </ScrollTop>

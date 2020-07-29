@@ -119,6 +119,10 @@ const useStyles = makeStyles((theme) => ({
     padding: "0",
     textTransform: "upperecase",
   },
+  upArrow: {
+    backgroundColor: "tan",
+    color: "black",
+  },
 }));
 
 function ScrollTop(props) {
@@ -340,7 +344,11 @@ const Resume = (props) => {
           </Box>
         </Box>
         <ScrollTop {...props}>
-          <Fab color="secondary" size="larger" aria-label="Scroll back to top">
+          <Fab
+            className={classes.upArrow}
+            size="larger"
+            aria-label="Scroll back to top"
+          >
             <KeyboardArrowUpIcon />
           </Fab>
         </ScrollTop>

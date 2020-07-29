@@ -10,9 +10,9 @@ import Portfolio from "././Components/Portfolio/Portfolio";
 import Contact from "././Components/Contacts/Contacts";
 import About from "././Components/About/About";
 import Community from "././Components/Community/Community";
-import Announcement from "././Components/About/About";
+import Announcement from "././Components/Announcement/Announcement";
 import Working from "./Components/Working/Working";
-import University from "../src/Components/MyUniversity/MyUniversity";
+import Academics from "./Components/Academics/Academics";
 import Main from "../src/Components/Main/Main";
 
 const App = () => {
@@ -20,17 +20,15 @@ const App = () => {
     <React.Fragment>
       <Router>
         <CssBaseline />
-        <div>
-          <Route exact path="/" component={Home} />
-          <Route path="/resume" component={Resume} />
-          <Route path="/portfolio" component={Portfolio} />
-          <Route path="/contact" component={Contact} />
-          <Route path="/about" component={About} />
-          <Route path="/community" component={Community} />
-          <Route path="/announcements" component={Announcement} />
-          <Route path="/working" component={Working} />
-          <Route path="/myuniversity" component={University} />
-        </div>
+        <Route exact path="/" component={Home} />
+        <Route path="/resume" component={Resume} />
+        <Route path="/portfolio" component={Portfolio} />
+        <Route path="/contact" component={Contact} />
+        <Route path="/about" component={About} />
+        <Route path="/community" component={Community} />
+        <Route path="/announcements" component={Announcement} />
+        <Route path="/working" component={Working} />
+        <Route path="/academics" component={Academics} />
       </Router>
     </React.Fragment>
   );
