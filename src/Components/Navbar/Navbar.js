@@ -114,8 +114,8 @@ const menuItems = [
   },
   {
     listIcon: <ChromeReaderModeIcon />,
-    listText: "Portfolio",
-    listPath: "/portfolio",
+    listText: "Projects",
+    listPath: "/projects",
   },
   {
     listIcon: <SchoolIcon />,
