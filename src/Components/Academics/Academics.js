@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../Navbar/Navbar";
 
-const MyUniversity = (props) => {
+const Academics = (props) => {
   return (
     <React.Fragment>
       <Navbar />
@@ -10,4 +10,4 @@ const MyUniversity = (props) => {
   );
 };
 
-export default MyUniversity;
+export default Academics;

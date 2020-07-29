@@ -21,26 +21,29 @@ import PersonPinCircleIcon from "@material-ui/icons/PersonPinCircle";
 import { AssignmentInd, Home } from "@material-ui/icons";
 import EmailIcon from "@material-ui/icons/Email";
 import ChromeReaderModeIcon from "@material-ui/icons/ChromeReaderMode";
-import avatar from "../../static/vivek.jpg";
+import avatar from "../../static/vg.jpg";
 import { makeStyles } from "@material-ui/core/styles";
 import Footer from "../Footer/Footer";
 import SchoolIcon from "@material-ui/icons/School";
 import AnnouncementIcon from "@material-ui/icons/Announcement";
 import AccountTreeSharpIcon from "@material-ui/icons/AccountTreeSharp";
 import ForumSharpIcon from "@material-ui/icons/ForumSharp";
+import CardMembershipIcon from "@material-ui/icons/CardMembership";
 
 // CSS STYLE for UI
 const useStyles = makeStyles((theme) => ({
   menuSliderContainer: {
     width: "auto",
-    height: 800,
+    height: "100vh",
     background: "#2d2d2d",
+    msOverflowY: "scroll",
+    msOverflowX: "hidden",
   },
   avatar: {
     display: "block",
     margin: "0.5rem auto",
-    width: theme.spacing(10),
-    height: theme.spacing(10),
+    width: theme.spacing(12),
+    height: theme.spacing(12),
   },
   listItemText: {
     color: "tan",
@@ -115,24 +118,29 @@ const menuItems = [
     listPath: "/portfolio",
   },
   {
-    listIcon: <AnnouncementIcon />,
-    listText: "Announcements",
-    listPath: "/announcements",
+    listIcon: <SchoolIcon />,
+    listText: "Adademics",
+    listPath: "#academics",
+  },
+  {
+    listIcon: <CardMembershipIcon />,
+    listText: "Certifications",
+    listPath: "/certificates",
   },
   {
     listIcon: <AccountTreeSharpIcon />,
     listText: "Working",
-    listPath: "/working",
-  },
-  {
-    listIcon: <SchoolIcon />,
-    listText: "Adademics",
-    listPath: "/academics",
+    listPath: "#working",
   },
   {
     listIcon: <ForumSharpIcon />,
     listText: "Community",
-    listPath: "/community",
+    listPath: "#community",
+  },
+  {
+    listIcon: <AnnouncementIcon />,
+    listText: "Announcements",
+    listPath: "#announcements",
   },
   {
     listIcon: <EmailIcon />,
@@ -167,20 +175,22 @@ const Navbar = () => {
       onClick={toggleSlider("left", false)}
     >
       <Avatar className={classes.avatar} src={avatar} alt="Vivek Kumar Ghosh" />
-      <Typography variant="h5" className={classes.insideContainerHeading}>
-        Vivek Kumar Ghosh
-      </Typography>
-      <Typography variant="p" className={classes.insideContainerElement}>
-        Bachelor of Technology
-      </Typography>
-      <Typography variant="p" className={classes.insideContainerElement}>
-        Computer Science
-      </Typography>
-      <Typography variant="p" className={classes.insideContainerElement}>
-        Dehradun, Uttarakhand
-      </Typography>
+      <Box justify="center" style={{ paddingBottom: "5px" }}>
+        <Typography variant="h5" className={classes.insideContainerHeading}>
+          Vivek Kumar Ghosh
+        </Typography>
+        <Typography variant="body1" className={classes.insideContainerElement}>
+          Bachelor of Technology
+        </Typography>
+        <Typography variant="body2" className={classes.insideContainerElement}>
+          Computer Science
+        </Typography>
+        <Typography variant="body2" className={classes.insideContainerElement}>
+          Dehradun, Uttarakhand
+        </Typography>
+      </Box>
       <Divider />
-      <List>
+      <List style={{ paddingTop: "0px" }}>
         {menuItems.map((item, key) => {
           return (
             <ListItem button key={key} component={Link} to={item.listPath}>

@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React from "react";
 import { Typography, Avatar, Grid, Box } from "@material-ui/core";
-import avatar from "../../static/vivek.jpg";
+import avatar from "../../static/vg.jpg";
 import Typed from "react-typed";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";

@@ -346,7 +346,7 @@ const Resume = (props) => {
         <ScrollTop {...props}>
           <Fab
             className={classes.upArrow}
-            size="larger"
+            size="large"
             aria-label="Scroll back to top"
           >
             <KeyboardArrowUpIcon />

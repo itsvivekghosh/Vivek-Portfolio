@@ -13,6 +13,7 @@ import Community from "././Components/Community/Community";
 import Announcement from "././Components/Announcement/Announcement";
 import Working from "./Components/Working/Working";
 import Academics from "./Components/Academics/Academics";
+import Certificates from "./Components/Certifications/Certification";
 import Main from "../src/Components/Main/Main";
 
 const App = () => {
@@ -29,6 +30,7 @@ const App = () => {
         <Route path="/announcements" component={Announcement} />
         <Route path="/working" component={Working} />
         <Route path="/academics" component={Academics} />
+        <Route path="/certificates" component={Certificates} />
       </Router>
     </React.Fragment>
   );

@@ -93,7 +93,7 @@ export function Portfolio(props) {
   const classes = useStyles();
 
   return (
-    <React.Fragment>
+    <div>
       <Navbar />
       <Toolbar id="back-to-top-anchor" />
       <Particles
@@ -301,7 +301,7 @@ export function Portfolio(props) {
           </Fab>
         </ScrollTop>
       </Box>
-    </React.Fragment>
+    </div>
   );
 }
 
