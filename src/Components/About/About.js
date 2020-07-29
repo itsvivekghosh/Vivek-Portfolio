@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
 import SendIcon from "@material-ui/icons/Send";
 import Contacts from "@material-ui/icons/Contacts";
 import Navbar from "../Navbar/Navbar";
-import avatarPicture from "../../static/vivek.jpg";
+import avatarPicture from "../../static/vg.jpg";
 
 const useStyles = makeStyles((theme) => ({
   boxContainer: {
