@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React from "react";
 import "./App.css";
-import { Index as Home } from "./Components/Index/Index";
+import Home from "./Components/Home/Home";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Resume from "././Components/Resume/Resume";
 import { BrowserRouter as Router } from "react-router-dom";
@@ -14,7 +14,6 @@ import Announcement from "././Components/Announcement/Announcement";
 import Working from "./Components/Working/Working";
 import Academics from "./Components/Academics/Academics";
 import Certificates from "./Components/Certifications/Certification";
-import Main from "../src/Components/Main/Main";
 
 const App = () => {
   return (
