@@ -2,6 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Particles from "react-particles-js";
 import Fab from "@material-ui/core/Fab";
+import { Link } from "react-router-dom";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import Zoom from "@material-ui/core/Zoom";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
@@ -16,41 +17,56 @@ import {
   CardContent,
   CardMedia,
   Button,
-  Typography
+  Typography,
 } from "@material-ui/core";
 import Navbar from "../Navbar/Navbar";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   mainContainer: {
     background: "#121212",
-    height: "auto"
+    height: "auto",
   },
   cardContainer: {
     maxWidth: 400,
-    backgroundColor: "tan",
+    backgroundColor: "white",
     margin: "2rem auto",
-    borderColor: "tan"
+    borderColor: "white",
   },
   particlesCanva: {
     position: "fixed",
     width: "100%",
-    opacity: "0.9"
+    opacity: "0.9",
   },
   root: {
     position: "fixed",
     bottom: theme.spacing(2),
-    right: theme.spacing(2)
+    right: theme.spacing(2),
   },
   projectDetails: {
-    color: "black"
+    color: "black",
   },
   projectSubDetails: {
-    color: "black"
+    color: "black",
   },
   upArrow: {
     backgroundColor: "tan",
-    color: "black"
-  }
+    color: "black",
+  },
+  optionButtons: {
+    display: "flex",
+    justifyContent: "center",
+  },
+  projectButton: {
+    display: "flex",
+    justifyContent: "center",
+  },
+  buttonMain: {
+    backgroundColor: "#0066ff",
+    color: "white",
+    "&:hover": {
+      backgroundColor: "#0052cc",
+    },
+  },
 }));
 
 function ScrollTop(props) {
@@ -60,10 +76,10 @@ function ScrollTop(props) {
   const trigger = useScrollTrigger({
     target: window ? window() : undefined,
     disableHysteresis: true,
-    threshold: 100
+    threshold: 100,
   });
 
-  const handleClick = event => {
+  const handleClick = (event) => {
     const anchor = (event.target.ownerDocument || document).querySelector(
       "#back-to-top-anchor"
     );
@@ -84,7 +100,7 @@ function ScrollTop(props) {
 
 ScrollTop.propTypes = {
   children: PropTypes.element.isRequired,
-  window: PropTypes.func
+  window: PropTypes.func,
 };
 
 export function Portfolio(props) {
@@ -101,47 +117,47 @@ export function Portfolio(props) {
             number: {
               value: 100,
               density: {
-                enable: true
-              }
+                enable: true,
+              },
             },
             size: {
               value: 3,
-              random: true
+              random: true,
             },
             move: {
               random: true,
               speed: 0.5,
               direction: "none",
-              out_mode: "out"
+              out_mode: "out",
             },
             line_linked: {
-              enable: false
-            }
+              enable: false,
+            },
           },
           interactivity: {
             events: {
               onhover: {
                 enable: false,
-                mode: "bubble"
+                mode: "bubble",
               },
               onclick: {
                 enable: true,
-                mode: "repulse"
-              }
+                mode: "repulse",
+              },
             },
             modes: {
               bubble: {
                 distance: 250,
                 duration: 2,
                 size: 0,
-                opacity: 0
+                opacity: 0,
               },
               repulse: {
                 distance: 50,
-                duration: 2
-              }
-            }
-          }
+                duration: 2,
+              },
+            },
+          },
         }}
       />
       <Box component="div" className={classes.mainContainer}>
@@ -162,7 +178,11 @@ export function Portfolio(props) {
                   className={classes.projectDetails}
                   variant="outlined"
                 >
-                  <Typography gutterBottom variant="h5">
+                  <Typography
+                    gutterBottom
+                    variant="h5"
+                    style={{ display: "flex", justifyContent: "center" }}
+                  >
                     TextShot
                   </Typography>
                   <Typography
@@ -184,12 +204,14 @@ export function Portfolio(props) {
                   </Typography>
                 </CardContent>
               </CardActionArea>
-              <CardActions>
-                <Button size="medium" variant="outlined">
-                  Share
-                </Button>
-                <Button size="medium" variant="outlined">
-                  Live Demo
+              <CardActions className={classes.projectButton}>
+                <Button
+                  size="large"
+                  variant="contained"
+                  component={Link}
+                  className={classes.buttonMain}
+                >
+                  Show Source Code
                 </Button>
               </CardActions>
             </Card>
@@ -201,7 +223,7 @@ export function Portfolio(props) {
               <CardActionArea>
                 <CardMedia
                   component="img"
-                  alt="projecet 1"
+                  alt="project 1"
                   height="140"
                   image={
                     "https://github.com/itsvivekghosh/Hand-Sign_Detection_and_Prediction/raw/master/Outputs/ONE.png"
@@ -227,10 +249,7 @@ export function Portfolio(props) {
               </CardActionArea>
               <CardActions>
                 <Button size="medium" variant="outlined">
-                  Share
-                </Button>
-                <Button size="medium" variant="outlined">
-                  Live Demo
+                  Demo Project
                 </Button>
               </CardActions>
             </Card>

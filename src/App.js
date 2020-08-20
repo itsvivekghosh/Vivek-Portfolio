@@ -3,7 +3,7 @@ import React from "react";
 import "./App.css";
 import Home from "./Components/Home/Home";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import Resume from "././Components/Resume/Resume";
+import Experience from "./Components/Experience/Experience";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Route } from "react-router-dom";
 import Projects from "././Components/Projects/Projects";
@@ -21,7 +21,7 @@ const App = () => {
       <Router>
         <CssBaseline />
         <Route exact path="/" component={Home} />
-        <Route path="/resume" component={Resume} />
+        <Route path="/experience" component={Experience} />
         <Route path="/projects" component={Projects} />
         <Route path="/contact" component={Contact} />
         <Route path="/about" component={About} />

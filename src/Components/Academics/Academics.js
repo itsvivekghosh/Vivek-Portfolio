@@ -550,7 +550,7 @@ const Academics = (props) => {
               style={{ color: "tan", textAlign: "left" }}
             >
               <ul>
-                <li>Semester Passed with 9.2 CGPA</li>
+                <li>Pusuing Current Semester</li>
               </ul>
             </Typography>
           </Box>

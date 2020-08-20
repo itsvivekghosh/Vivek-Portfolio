@@ -10,7 +10,7 @@ import {
   CardActionArea,
   CardContent,
   Button,
-  Avatar
+  Avatar,
 } from "@material-ui/core";
 import Particles from "react-particles-js";
 import { Link } from "react-router-dom";
@@ -32,74 +32,78 @@ import {
   WhatsappShareButton,
   LinkedinIcon,
   LinkedinShareButton,
-  TwitterShareButton
+  TwitterShareButton,
 } from "react-share";
 
 const shareUrl = "vivekuit.herokuapp.com";
 const emails = ["soapmactevis1@gmail.com", "gvivekghosh@gmail.com"];
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   boxContainer: {
-    height: "auto"
+    height: "auto",
   },
   aboutMeContainer: {
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    position: "absolute"
+    position: "absolute",
   },
   heading: {
     color: "tomato",
-    textAlign: "center"
+    textAlign: "center",
   },
   cardContainer: {
     display: "block",
     maxWidth: 600,
     backgroundColor: "wheat",
-    borderColor: "wheat"
+    borderColor: "wheat",
   },
   subDetails: {
     display: "block",
     textAlign: "center",
-    color: "black"
+    color: "black",
   },
   cardButtons: {
     diplay: "flex",
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
   },
   avatarImage: {
     display: "block",
     width: theme.spacing(15),
     height: theme.spacing(15),
-    margin: "0.5rem auto"
+    margin: "0.5rem auto",
   },
   cardHeading: {
     fontWeight: "500",
     textAlign: "center",
-    color: "black"
+    color: "black",
   },
   locationButton: {
     color: "teal",
-    backgroundColor: "white"
+    backgroundColor: "white",
   },
   contactButton: {
     color: "brown",
-    backgroundColor: "white"
+    backgroundColor: "white",
   },
   particlesCanva: {
     position: "fixed",
     width: "100%",
-    opacity: "0.9"
+    opacity: "0.9",
   },
   shareCells: {
     display: "block",
-    alignItems: "center",
-    backgroundColor: "#e0e0e0"
+    alignItems: "right",
+    backgroundColor: "#e0e0e0",
   },
   shareButton: {
     color: "green",
-    backgroundColor: "white"
-  }
+    backgroundColor: "white",
+  },
+  optionButtons: {
+    display: "flex",
+    justifyContent: "center",
+  },
 }));
 
 function SimpleDialog(props) {
@@ -121,7 +125,7 @@ function SimpleDialog(props) {
           backgroundColor: "#e0e0e0",
           color: "black",
           display: "block",
-          textAlign: "center"
+          textAlign: "center",
         }}
       >
         <DialogTitle id="simple-dialog-title">Share My Profile</DialogTitle>
@@ -180,7 +184,7 @@ function SimpleDialog(props) {
 SimpleDialog.propTypes = {
   onClose: PropTypes.func.isRequired,
   open: PropTypes.bool.isRequired,
-  selectedValue: PropTypes.string.isRequired
+  selectedValue: PropTypes.string.isRequired,
 };
 
 export function Portfolio(props) {
@@ -192,7 +196,7 @@ export function Portfolio(props) {
     setOpen(true);
   };
 
-  const handleClose = value => {
+  const handleClose = (value) => {
     setOpen(false);
     setSelectedValue(value);
   };
@@ -206,47 +210,47 @@ export function Portfolio(props) {
             number: {
               value: 100,
               density: {
-                enable: true
-              }
+                enable: true,
+              },
             },
             size: {
               value: 3,
-              random: true
+              random: true,
             },
             move: {
               random: true,
               speed: 0.5,
               direction: "none",
-              out_mode: "out"
+              out_mode: "out",
             },
             line_linked: {
-              enable: false
-            }
+              enable: false,
+            },
           },
           interactivity: {
             events: {
               onhover: {
                 enable: false,
-                mode: "bubble"
+                mode: "bubble",
               },
               onclick: {
                 enable: true,
-                mode: "repulse"
-              }
+                mode: "repulse",
+              },
             },
             modes: {
               bubble: {
                 distance: 250,
                 duration: 2,
                 size: 0,
-                opacity: 0
+                opacity: 0,
               },
               repulse: {
                 distance: 50,
-                duration: 2
-              }
-            }
-          }
+                duration: 2,
+              },
+            },
+          },
         }}
       />
       <Box className={classes.boxContainer}>
@@ -279,13 +283,13 @@ export function Portfolio(props) {
                       self-improvement. I have strong Problem Solving Skills &
                       bring energy, patience, positivity and cultural values to
                       the team. Bookmarked Data Scientist and a Problem-Solver.
-                      Love Data Activities and Sciences. <br></br>
+                      <br></br> Love Data Activities and Sciences. <br></br>
                       <strong> A Happy Coder!</strong>
                     </p>
                   </Typography>
                 </CardContent>
               </CardActionArea>
-              <CardActions>
+              <CardActions className={classes.optionButtons}>
                 <Button
                   size="medium"
                   variant="contained"

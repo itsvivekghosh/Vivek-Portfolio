@@ -109,8 +109,8 @@ const menuItems = [
   },
   {
     listIcon: <AssignmentInd />,
-    listText: "Resume",
-    listPath: "/resume",
+    listText: "Experience",
+    listPath: "/experience",
   },
   {
     listIcon: <ChromeReaderModeIcon />,
